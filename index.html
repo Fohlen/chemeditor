@@ -12,6 +12,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="/css/simple-sidebar.css" rel="stylesheet">
@@ -33,30 +35,15 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
-                        Start Bootstrap
+                    <a>
+                        chemeditor
                     </a>
                 </li>
-                <li>
-                    <a href="#">Dashboard</a>
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#editor" role="tab">Editor</a>
                 </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#reference" role="tab">Reference</a>
                 </li>
             </ul>
         </div>
@@ -65,14 +52,31 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-                    </div>
+              <!-- tab-content -->
+              <div class="tab-content">
+                <!-- tab-editor -->
+                <div class="tab-pane active" id="editor" role="tabpanel">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <h2><i class="fa fa-pencil-square" aria-hidden="true"></i> Editor</h2>
+                          <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                          <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                      </div>
+                  </div>
                 </div>
+                <!-- /tab-editor -->
+                <!-- tab-reference -->
+                <div class="tab-pane" id="reference" role="tabpanel">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <h2><i class="fa fa-book" aria-hidden="true"></i> Reference</h2>
+                    </div>
+                  </div>
+                </div>
+                <!-- /tab-reference -->
+              </div>
+              <!-- /tab-content -->
+              <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
