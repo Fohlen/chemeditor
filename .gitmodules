@@ -1,0 +1,3 @@
+[submodule "kekule"]
+	path = kekule
+	url = https://github.com/partridgejiang/Kekule.js

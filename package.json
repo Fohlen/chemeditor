@@ -1,0 +1,18 @@
+{
+  "name": "chemeditor",
+  "version": "0.0.1",
+  "description": "A chemical editor",
+  "keywords": [
+    "chemistry",
+    "javascript",
+    "HTML5"
+  ],
+  "author": "Lennard Berger",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  },
+  "scripts": {
+    "serve": "http-server"
+  }
+}
