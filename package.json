@@ -16,6 +16,7 @@
     "serve": "http-server"
   },
   "dependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "three": "^0.86.0"
   }
 }

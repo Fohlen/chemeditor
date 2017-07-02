@@ -14,8 +14,6 @@
     <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- font awesome -->
     <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- kekule -->
-    <link href="/kekule/release/themes/default/kekule.css">
 
     <!-- Custom CSS -->
     <link href="/css/simple-sidebar.css" rel="stylesheet">
@@ -60,8 +58,21 @@
                 <div class="tab-pane active" id="editor" role="tabpanel">
                   <div class="row">
                       <div class="col-lg-12">
-                          <h2><i class="fa fa-pencil-square" aria-hidden="true"></i> Editor</h2>
-                          <div id="chemViewer" data-widget="Kekule.ChemWidget.Viewer"></div>
+                          <h2><i class="fa fa-pencil-square" aria-hidden="true"></i> Editor
+
+                          <div class="btn-toolbar pull-right">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-secondary" title="New formula"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                              <button type="button" class="btn btn-secondary" title="Save formula"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
+                              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#loadModal" title="Load formula"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+                              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exportModal" title="Export formula"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+                            </div>
+                          </div>
+                          </h2>
+                      </div>
+
+                      <div class="row">
+                        <canvas id="playground"></canvas>
                       </div>
                   </div>
                 </div>
@@ -71,6 +82,7 @@
                   <div class="row">
                     <div class="col-lg-12">
                       <h2><i class="fa fa-book" aria-hidden="true"></i> Reference</h2>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -85,11 +97,59 @@
     </div>
     <!-- /#wrapper -->
 
+    <!-- modal-export -->
+    <div class="modal fade" id="loadModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Load formula</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /modal-export -->
+
+    <!-- modal-export -->
+    <div class="modal fade" id="exportModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Export formula</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You can choose from various ways to export your formula.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Export formula</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /modal-export -->
+
     <!-- require libraries at the end of the document so it loads faster -->
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/tether/dist/js/tether.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src='/kekule/release/kekule.min.js'></script>
+    <script src="/node_modules/three/build/three.min.js"></script>
+    <script src="/kekule/release/kekule.min.js"></script>
+
+    <!-- load the actual application -->
+    <script src="/application.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>
